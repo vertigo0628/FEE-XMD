@@ -1,4 +1,4 @@
-FROM node:18-bullseye
+FROM node:20-bookworm
 
 # Install build dependencies for canvas and other native modules
 RUN apt-get update && apt-get install -y \
