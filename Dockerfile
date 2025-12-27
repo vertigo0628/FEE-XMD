@@ -1,20 +1,21 @@
-FROM node:18-alpine
+FROM node:18-bullseye
 
 # Install build dependencies for canvas and other native modules
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     git \
     python3 \
     make \
     g++ \
-    cairo-dev \
-    jpeg-dev \
-    pango-dev \
-    musl-dev \
-    giflib-dev \
-    pixman-dev \
-    pangomm-dev \
-    libjpeg-turbo-dev \
-    freetype-dev
+    libcairo2-dev \
+    libpango1.0-dev \
+    libjpeg-dev \
+    libgif-dev \
+    librsvg2-dev \
+    libpixman-1-dev \
+    libpangomm-1.4-dev \
+    libjpeg-turbo8-dev \
+    libfreetype6-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
