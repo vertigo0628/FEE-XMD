@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:18-alpine
 
 # Install build dependencies for canvas and other native modules
 RUN apk add --no-cache \
