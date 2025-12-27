@@ -3,7 +3,10 @@ const { database } = require('../Env/settings');
 
 const pool = new Pool({
     connectionString: database,
-    ssl: { rejectUnauthorized: false }
+    ssl: { rejectUnauthorized: false },
+    max: 20,
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 2000,
 });
 
 async function initializeDatabase() {
