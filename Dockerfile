@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -y \
     librsvg2-dev \
     libpixman-1-dev \
     libpangomm-1.4-dev \
-    libjpeg-turbo8-dev \
     libfreetype6-dev \
     && rm -rf /var/lib/apt/lists/*
 
