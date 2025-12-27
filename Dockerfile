@@ -1,7 +1,20 @@
 FROM node:20-alpine
 
-# Install git and other build dependencies
-RUN apk add --no-cache git
+# Install build dependencies for canvas and other native modules
+RUN apk add --no-cache \
+    git \
+    python3 \
+    make \
+    g++ \
+    cairo-dev \
+    jpeg-dev \
+    pango-dev \
+    musl-dev \
+    giflib-dev \
+    pixman-dev \
+    pangomm-dev \
+    libjpeg-turbo-dev \
+    freetype-dev
 
 WORKDIR /app
 
