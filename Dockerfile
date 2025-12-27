@@ -1,12 +1,15 @@
 FROM node:20-alpine
 
+# Install git and other build dependencies
+RUN apk add --no-cache git
+
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --production
+RUN npm install --omit=dev
 
 # Copy application code
 COPY . .
